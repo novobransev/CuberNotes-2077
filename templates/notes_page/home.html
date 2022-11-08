@@ -1,0 +1,46 @@
+{% extends 'notes_page/base.html' %}
+
+{% block content %}
+    <div class="container" style="display: flex;justify-content: center;align-items: center;flex-direction: column-reverse;">
+        {% for note in notes_list %}
+            {% if note.task_complete == False %}
+                <div style="width: 500px">
+                    <a href="note/{{ note.id }}" {% if note.important == False %}style="text-decoration: none; width: 500px"{% else %}style="text-decoration: none; width: 500px" class="color2"{% endif %}>
+                        <h6>{{ note.time_create|date:'j M. H:i' }}<p>{{ note.time_create|date:'Y' }}</p></h6>
+                        <h4>{{ note.name }}</h4><br>
+                        {% if note.descriptions %}
+                            <h6 class="h5-cl">{{ note.descriptions }}</h6>
+                        {% else %}
+                            <h6>Описания нет</h6>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="pagination container" style="display: flex; justify-content: center">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; Первая</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+            {% endif %}
+
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+
+
+    <div class="container" style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        <a href="{% url 'post_new' %}" class="small new_color2 text-center">
+            <span class="new_color"></span>
+            <span class="new_color"></span>
+            <span class="new_color"></span>
+            <span class="new_color"></span>добавить заметку</a>
+    </div>
+{% endblock %}

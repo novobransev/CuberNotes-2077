@@ -1,0 +1,36 @@
+{% extends 'notes_page/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'notes_page/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+            <div {% if notes.important == False %}class='cont'{% else %}class='cont2'{% endif %}>
+                <h2 {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>{{ notes.name }}</h2><br>
+                {{ notes.descriptions|linebreaks }}<br>
+                <style>
+                    {% if notes.important == True %}
+                        p {
+                            color: #fff;
+                            text-shadow: var(--flick-small-text-shadow);
+                        }
+                        {% else %}
+                        p {
+                            color: #fff;
+                              text-shadow: var(--flick-big-text-shadow);
+                        }
+                        {% endif %}
+                </style>
+                {% if notes.important %}
+                    <p {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>Важно</p>
+                {% else %}
+                    <p {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>Не важно</p>
+                {% endif %}
+
+            </div>
+    <div style="display: flex;justify-content: center;"><a class="none" href="{% url 'home_complete' %}"><button type="button" class="but2">назад</button></a></div>
+    </div>
+{% endblock %}

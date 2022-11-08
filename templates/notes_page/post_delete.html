@@ -1,0 +1,23 @@
+{% extends 'notes_page/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'notes_page/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        <div>
+            <h1 class="neonText">Вы действительно хотите удалить заметку?</h1>
+            <form action="" method="post" class="text-center mt-5">{% csrf_token %}
+              <button type="submit" class="but2">Да уверен</button>
+                <div style="display: flex;justify-content: center;"><a class="none" href="{% url 'post_detail' notes.id %}"><button type="button" class="but2">назад</button></a></div>
+                <style>
+                    .none {
+                        margin: 0;
+                    }
+                </style>
+            </form>
+        </div>
+    </div>
+{% endblock %}

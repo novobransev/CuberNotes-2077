@@ -1,0 +1,62 @@
+{% extends 'notes_page/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'notes_page/form.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div>
+
+        <div {% if notes.important == False %}class='cont container-sm'{% else %}class='cont2 container-sm'{% endif %}>
+            <h2 {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>{{ notes.name }}</h2>
+            <br>
+            {{ notes.descriptions|linebreaks }}<br>
+                <style>
+                    {% if notes.important == True %}
+                        p {
+                            color: #fff;
+                            text-shadow: var(--flick-small-text-shadow);
+                        }
+                        {% else %}
+                        p {
+                            color: #fff;
+                              text-shadow: var(--flick-big-text-shadow);
+                        }
+                        {% endif %}
+                </style>
+            {% if notes.important %}
+                <p {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>Важно</p>
+            {% else %}
+                <p {% if notes.important == False %}class='neonText2'{% else %}class='neonText'{% endif %}>Не важно</p>
+            {% endif %}
+        </div>
+        <div style="display: flex;justify-content: center;" class="mb-3">
+            <a href='{% url 'post_edit' notes.id %}'>Редактировать заметку</a>
+            <a href='{% url 'post_delete' notes.id %}'>Удалить заметку</a><br>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="neonText" style="display: flex;justify-content: center;">{{ form.as_p }}</div><br>
+            <style>
+                label {
+                    color: #ff0000;
+                    text-shadow: 0 0 5px #f40303,
+                        0 0 25px #a90000,
+                        0 0 50px #ea1111,
+                        0 0 200px #ff1616;
+                        }
+            </style>
+            <div style="display: flex;justify-content: center;"><button type="submit" class="but2">Сохранить</button>
+
+                <style>
+                    .but2 {
+                        margin-top: 0;
+                    }
+                </style>
+            </div>
+            <div style="display: flex;justify-content: center;"><a class="none" href="{% url 'home' %}"><button type="button" class="but2">назад</button></a></div>
+        </form>
+    </div>
+{% endblock %}

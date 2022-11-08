@@ -1,0 +1,111 @@
+.login-box {
+  width: 540px;
+  padding: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 38 191 / 38%);
+  border: 2px solid #001b5b;
+  border-radius: 10px;
+}
+
+.login-box h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #0307f4;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.but {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  box-shadow: 0 0 1px #0307f4;
+  color: #0035ab;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.but:hover {
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #0307f4
+}
+
+.but2 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  box-shadow: 0 0 1px #ff0000;
+  color: #930000;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.but2:hover {
+  color: #930000;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #ff0000
+}
+
+.form-control {
+  background-color: #050801;
+  border: 2px solid #001b5b;
+  color: #ffffff;
+  text-shadow: 0px 0px 20px #ff0000;
+}
+
+.form-control:focus {
+  background-color: #050801;
+  border: 2px solid #001b5b;
+  color: #ffffff;
+}

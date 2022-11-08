@@ -1,0 +1,21 @@
+{% extends 'notes_page/base.html' %}
+
+{% block content %}
+    <div class="container" style="display: flex;justify-content: center;align-items: center;flex-direction: column-reverse;">
+        {% for note in notes_list %}
+            {% if note.task_complete == True %}
+                <div style="width: 500px">
+                    <a href="{% url 'post_complete' note.id %}" {% if note.important == False %}style="text-decoration: none; width: 500px"{% else %}style="text-decoration: none; width: 500px" class="color2"{% endif %}>
+                        <h6>{{ note.datecompleted }}</h6><br>
+                        <h4>{{ note.name }}</h4><br>
+                        {% if note.descriptions %}
+                            <h6 class="h5-cl">{{ note.descriptions }}</h6>
+                        {% else %}
+                            <h6>Описания нет</h6>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'notes_page/base.html' %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'notes_page/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="login-box mt-5">
+            <h1>Редактировать заметку</h1>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <style>
+                    h1 {
+                        color: #0022ff;
+                        text-shadow:
+                            0px 0px 10px #0022ff,
+                            1px 1px 20px #0022ff,
+                            -1px -1px 50px #0022ff
+                    }
+                    textarea {
+                        max-height: 300px;
+                    }
+                    .login-box {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                </style>
+                <div style="display: flex;flex-direction: column;">
+                <div><button type="submit" class="but">Сохранить</button></div>
+                <div><a href="{% url 'post_detail' notes.id %}" class="none none2"><input type="button" value="назад" class="but"/></a></div>
+                </div>
+            </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    color-scheme: dark;
+  --flick-big-text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff,
+      0 0 15px #03e9f4,
+      0 0 30px #03e9f4,
+      0 0 40px #03e9f4,
+      0 0 70px #03e9f4,
+      0 0 100px #03e9f4;
+  --flick-small-text-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 11px #e8172d,
+      0 0 20px #ad0013,
+      0 0 30px #b70000,
+      0 0 55px #730000,
+      0 0 80px #d50038;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background: #050801;
+    font-weight: bold;
+}
+a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 35px;
+    margin-left: 35px;
+    border-radius: 10px;
+}
+
+.task {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+a:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    border-radius: 10px;
+}
+
+.color1:hover {
+    background: #ee1919;
+    color: #050801;
+    box-shadow: 0 0 5px #f40303,
+                0 0 25px #a90000,
+                0 0 50px #ea1111,
+                0 0 200px #ff1616;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+.color1 {
+    box-shadow: 0 0 5px #f40303,
+                0 0 25px #a90000,
+                0 0 200px #ff1616;
+    color: #b70000;
+}
+
+.color2 {
+    color: #b70000;
+}
+
+.color2:hover {
+    background: #ee1919;
+    color: #050801;
+    box-shadow: 0 0 5px #f40303,
+                0 0 25px #a90000,
+                0 0 50px #ea1111,
+                0 0 200px #ff1616;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+a:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow: var(--flick-small-text-shadow);
+}
+
+.neonText2 {
+  color: #fff;
+  text-shadow: var(--flick-big-text-shadow);
+}
+
+.cont {
+  padding: 1.5rem;
+  display: block;
+  text-align: center;
+  border: solid 2px #03e9f4;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 .1rem #fff,
+              0 0 .2rem #fff,
+              0 0 .3rem #03e9f4,
+              0 0 .8rem #03e9f4,
+              0 0 1rem #03e9f4,
+              inset 0 0 1.3rem #03e9f4;
+}
+
+.cont2 {
+  padding: 1.5rem;
+  display: block;
+  text-align: center;
+  border: solid 2px #af0000;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 .1rem #b20505,
+              0 0 .2rem #ab0000,
+              0 0 .3rem #f83c3c,
+              0 0 .8rem #f81e1e,
+              0 0 1rem #ef1515,
+              inset 0 0 1.3rem #e70707;
+}
+
+.neon {
+  color: #93a5ff;
+
+  font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+label {
+    color: #006dff;
+    text-shadow:
+            0px 0px 10px #006dff,
+            1px 1px 20px #006dff,
+            -1px -1px 50px #006dff
+
+}
+.h5-cl {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.none {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+.none:hover {
+    background: #000000;
+    color: #050801;
+    box-shadow: 0 0 5px #000000,
+                0 0 25px #000000,
+                0 0 50px #000000,
+                0 0 200px #000000;
+     -webkit-box-reflect:none;
+    border-radius: 10px;
+}
+
+.none2 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    letter-spacing: 1.5px;
+}
